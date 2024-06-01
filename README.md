@@ -22,4 +22,4 @@ This code will list the User ID's of the users in city “FanCode” that have m
         python main.py
         ```
         
-4.  The result will be in the form of a dictinary of user Ids and names that satisfy the condition given.
+4.  The result will be in the form of a dictionary of user Ids and names that satisfy the condition given.
