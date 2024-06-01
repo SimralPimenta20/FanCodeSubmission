@@ -5,7 +5,7 @@ class Geo:
     def __init__(self, lat, lng):
         self.lat = lat
         self.lng = lng
-    #find whether in Fancode or not
+    ###find whether in Fancode or not
     ##def LocationFancode (self):
         ##return ((float(self.lat) > -40.00 and float(self.lat) < 5.00) and (float(self.lng) > 5.00 and float(self.lng) < 100.00))
     
