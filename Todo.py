@@ -29,14 +29,14 @@ class Todo:
 
         for item in data:
             TodoObject = Todo(
-                userId = item["userId"],#Json data is accessed using brackets not "." notation
+                userId = item["userId"],
                 id = item["id"],
                 title = item["title"],
                 completed = item["completed"]
             )
             TodoItems.append(TodoObject)
          
-        return TodoItems #we return the list
+        return TodoItems 
     
     @staticmethod
     def GetUsersWithMoreThan50Completion(TodoItems):
@@ -46,8 +46,6 @@ class Todo:
         for item in TodoItems:
             if not type(item) == Todo:
                 break
-         #   When you are changing the values in a dictionary go about like this use curly braces and attribute name inside it
-         #   On the other hand hen you  are accessing the value in the  dictionary you can use the method similar to accessing a 2D Array
             if item.userId in data.keys():
                 data[item.userId] = { 
                     "total": data[item.userId]["total"] + 1,

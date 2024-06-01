@@ -8,19 +8,10 @@ def Main():
     #condition one is greater than 50%
     userIdscondn1 = Todo.GetUsersWithMoreThan50Completion(TodoItems)
     
-    #print(userIdscondn1)
-
-    ##userIdscondn1and2 = []
-    ##for user in UserItems:
-        ##if user.address.geo.LocationFancode():
-            ##userIdscondn1and2.append(user.id)
-    #return userIdscondn1and2
-    ##print(userIdscondn1and2)
-    
-
-    #new Code
+    #condition two is - it is a user from FanCode City
     userIdscondn2 = User.ListofFancodeUsers(UserItems)
 
+    #this is the final array
     userIdscondn1and2 = []
 
     for x in userIdscondn1:
@@ -29,6 +20,7 @@ def Main():
 
     #return userIdscondn1and2
     print(userIdscondn1and2)
+
 Main()
 
 
