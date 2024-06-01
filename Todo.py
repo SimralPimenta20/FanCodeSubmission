@@ -10,7 +10,6 @@ class Todo:
 
     @staticmethod
     def ListOfTodoItems(url):
-        
         response = None
         try:
             response = requests.get(url)
@@ -26,7 +25,6 @@ class Todo:
             return []
         
         TodoItems = []
-
         for item in data:
             TodoObject = Todo(
                 userId = item["userId"],
@@ -35,14 +33,11 @@ class Todo:
                 completed = item["completed"]
             )
             TodoItems.append(TodoObject)
-         
         return TodoItems 
     
     @staticmethod
     def GetUsersWithMoreThan50Completion(TodoItems):
-
         data = {}
-
         for item in TodoItems:
             if not type(item) == Todo:
                 break
@@ -58,10 +53,8 @@ class Todo:
                     }
                 
         MoreThan50PercentCompletedUsers = []
-
         for user in data.keys():
             if data[user]["completed"]/data[user]["total"] > 0.5:
                 MoreThan50PercentCompletedUsers.append(user)
-        
         return MoreThan50PercentCompletedUsers
 

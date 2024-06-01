@@ -36,7 +36,6 @@ class User:
     
     @staticmethod
     def ListOfUsers(url):
-        
         response = None
         try:
             response = requests.get(url)
@@ -51,7 +50,6 @@ class User:
             print("Could not access data in Users URL!")
 
         UserItems = []
-
         for item in data:
             geo = Geo(
                 lat = item["address"]["geo"]["lat"],
@@ -82,18 +80,14 @@ class User:
                 company = company
             )
             UserItems.append(user)
-        
         return UserItems
 
     @staticmethod
     def ListofFancodeUsers(UserItems):
-        
         FancodeUsers = []
-        
         for item in UserItems:
             lat = float(item.address.geo.lat)
             lng = float(item.address.geo.lng)
             if((float(lat) > -40.00 and float(lat) < 5.00) and (float(lng) > 5.00 and float(lng) < 100.00)):
                 FancodeUsers.append(item.id)
-
         return FancodeUsers
