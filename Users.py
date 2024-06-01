@@ -60,7 +60,6 @@ class User:
                 suite = item["address"]["suite"],
                 city = item["address"]["city"],
                 zipcode = item["address"]["zipcode"],
-                #the checking of type is geo by the __init__ function
                 geo = geo                
             )
             company = Company(
@@ -84,10 +83,10 @@ class User:
 
     @staticmethod
     def ListofFancodeUsers(UserItems):
-        FancodeUsers = []
+        FancodeUsers = {}
         for item in UserItems:
             lat = float(item.address.geo.lat)
             lng = float(item.address.geo.lng)
             if((float(lat) > -40.00 and float(lat) < 5.00) and (float(lng) > 5.00 and float(lng) < 100.00)):
-                FancodeUsers.append(item.id)
+                FancodeUsers[item.id] = item.name
         return FancodeUsers

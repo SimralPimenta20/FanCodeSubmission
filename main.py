@@ -11,12 +11,12 @@ def Main():
     #condition two is - it is a user from FanCode City
     userIdscondn2 = User.ListofFancodeUsers(UserItems)
 
-    #this is the final array
-    userIdscondn1and2 = []
+    #Dictionary of Names and Ids of satisfying users
+    userIdscondn1and2 = {}
 
     for x in userIdscondn1:
-        if x in userIdscondn2:
-            userIdscondn1and2.append(x)
+        if x in userIdscondn2.keys():
+            userIdscondn1and2[x] = userIdscondn2[x]
 
     #return userIdscondn1and2
     print(userIdscondn1and2)
